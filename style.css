@@ -201,7 +201,7 @@ polygon.arrow-top {
 
 .section-title {
     position: relative;
-    padding: 4rem 0;
+    padding: 4rem 2rem;
     font-size: 2rem;
 }
 
@@ -233,7 +233,7 @@ polygon.arrow-top {
 }
 
 .section.membership p {
-    max-width: 50%;
+    padding: 1rem 3rem;
 }
 
 .timeline {
@@ -266,6 +266,11 @@ polygon.arrow-top {
     padding: 2rem;
 }
 
+.timeline .checkpoint .img {
+    align-items: center;
+    justify-content: center;
+}
+
 .timeline .checkpoint .img img {
     border: 2px solid var(--poscon-tertiary);
     object-fit: contain;
@@ -274,7 +279,7 @@ polygon.arrow-top {
 }
 
 .numbers {
-    width: 100%;
+    flex: 1;
     padding: 4rem 0;
     gap: 2rem;
     background-color: var(--poscon-tertiary);
@@ -306,8 +311,45 @@ form.contact {
 footer {
     padding: 2rem;
     font-size: 1.5rem;
+    background: linear-gradient(
+        0deg,
+        var(--poscon-secondary),
+        transparent
+    );
 }
 
 footer .socials {
     gap: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .first-section {
+        flex-direction: column;
+    }
+
+    .timeline .checkpoint {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .timeline .checkpoint:nth-child(odd) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .timeline .checkpoint:nth-child(even) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .numbers > .row {
+        flex-direction: column;
+    }
+
+    form.contact .row {
+        flex-direction: column;
+    }
 }
