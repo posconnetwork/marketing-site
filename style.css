@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+
+:root {
+    --poscon-primary: #1e1933;
+    --poscon-secondary: #19162b;
+    --poscon-tertiary: #6c6788;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: 'Titillium Web';
+    font-weight: 200;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: white;
+    background-color: var(--poscon-primary);
+    scroll-behavior: smooth;
+    scroll-padding-block: 5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+button {
+    cursor: pointer;
+    padding: 1.5rem 3rem;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    color: white;
+    background-color: transparent;
+}
+
+button.primary {
+    background-color: var(--poscon-tertiary);
+    border-radius: 0.5rem;
+
+}
+
+input[type=text] {
+    border: 2px solid white;
+    outline: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    background-color: #ffffff33;
+    color: white;
+}
+
+nav {
+    width: 100%;
+    padding: 1rem 0;
+    position: absolute;
+    top: 0;
+    gap: 1rem;
+    z-index: 3;
+}
+
+nav > a {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Montserrat';
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1e193388;
+    z-index: 1;
+}
+
+.has-background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+main {
+    background: url(./assets/POSCON_Mark_White.svg);
+    background-size: 200% !important;
+}
+
+.welcome {
+    position: relative;
+    height: 100vh;
+    background-image: url(./assets/wing-clouds.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.welcome .logo {
+    flex: 1;
+    z-index: 2;
+}
+
+.welcome .see-below {
+    position: absolute;
+    bottom: 5rem;
+    right: 5rem;
+    font-size: 2rem;
+    z-index: 2;
+}
+
+#more-arrows {
+	width: 75px;
+    height: 65px;
+    animation: move ease-in-out 3s infinite;
+}
+
+#more-arrows:hover polygon {
+  fill: #FFF;
+  transition: all .2s ease-out;
+}
+
+#more-arrows:hover polygon.arrow-bottom {
+    transform: translateY(-18px);
+}
+
+#more-arrows:hover polygon.arrow-top {
+    transform: translateY(18px);
+}
+
+polygon {
+    fill: #FFF;
+    transition: all .2s ease-out;
+}
+
+polygon.arrow-middle {
+    opacity: 0.75;
+}
+
+polygon.arrow-top {
+    opacity: 0.5
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.section {
+    padding: 2rem 10%;
+}
+
+.section-title {
+    position: relative;
+    padding: 4rem 0;
+    font-size: 2rem;
+}
+
+.section-title h2 {
+    z-index: 3;
+}
+
+.first-section {
+    gap: 2rem;
+}
+
+.first-section .col {
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.first-section .col .icon {
+    font-size: 4rem;
+    color: var(--poscon-tertiary);
+}
+
+.section.video {
+    max-width: 80%;
+}
+
+.section.video video {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.section.membership p {
+    max-width: 50%;
+}
+
+.timeline {
+    background: linear-gradient(
+        90deg,
+        transparent 49.95%,
+        var(--poscon-tertiary) 49.95%,
+        var(--poscon-tertiary) 50.05%,
+        transparent 50.05%
+    );
+}
+
+.timeline .checkpoint:nth-child(odd) {
+    display: flex;
+    flex-direction: row;
+}
+
+.timeline .checkpoint:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: end;
+}
+
+.timeline .checkpoint {
+    gap: 2rem;
+}
+
+.timeline .checkpoint > .col {
+    flex: 1;
+    padding: 2rem;
+}
+
+.timeline .checkpoint .img img {
+    border: 2px solid var(--poscon-tertiary);
+    object-fit: contain;
+    border-radius: 0.5rem;
+    max-width: 80%;
+}
+
+.numbers {
+    width: 100%;
+    padding: 4rem 0;
+    gap: 2rem;
+    background-color: var(--poscon-tertiary);
+    font-family: 'Montserrat';
+}
+
+.numbers .col {
+    padding: 2rem;
+}
+
+.numbers .count {
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: 600;
+    border-block-end: 1px solid white;
+}
+
+.numbers .label {
+    padding: 1rem;
+    border-block-start: 1px solid white;
+}
+
+form.contact .col,
+form.contact .row,
+form.contact {
+    gap: 1rem;
+}
+
+footer {
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+footer .socials {
+    gap: 1rem;
+}
