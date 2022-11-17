@@ -103,6 +103,10 @@ nav > a {
     justify-content: center;
 }
 
+.d-none {
+    display: none;
+}
+
 .text-center {
     text-align: center;
 }
@@ -113,7 +117,7 @@ nav > a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #1e193388;
+    background-color: #1e193399;
     z-index: 1;
 }
 
@@ -125,13 +129,14 @@ nav > a {
 
 main {
     background: url(./assets/POSCON_Mark_White.svg);
-    background-size: 200% !important;
+    background-size: 80%;
+    background-attachment: fixed;
 }
 
 .welcome {
     position: relative;
     height: 100vh;
-    background-image: url(./assets/wing-clouds.jpg);
+    background-image: url(./assets/top.png);
     background-size: cover;
     background-attachment: fixed;
 }
@@ -308,18 +313,35 @@ form.contact {
     gap: 1rem;
 }
 
+.radar-bg {
+    position: relative;
+    background-image: url(./assets/radar-client-background.webp);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.radar-bg :not(.overlay) {
+    z-index: 3;
+}
+
 footer {
-    padding: 2rem;
+    padding: 6rem 2rem;
     font-size: 1.5rem;
-    background: linear-gradient(
-        0deg,
-        var(--poscon-secondary),
-        transparent
-    );
 }
 
 footer .socials {
     gap: 1rem;
+}
+
+.clouds-bg {
+    position: relative;
+    background-image: url(./assets/top.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.clouds-bg :not(.overlay) {
+    z-index: 3;
 }
 
 @media screen and (max-width: 1200px) {
