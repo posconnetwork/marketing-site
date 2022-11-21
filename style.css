@@ -117,7 +117,7 @@ nav > a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #1e1933e0;
+    background-color: #1e193366;
     z-index: 1;
 }
 
@@ -136,13 +136,15 @@ main {
 .welcome {
     position: relative;
     height: 100vh;
-    background-image: url(./assets/top.png);
+    background-image: url(./assets/20151216_173843.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
 .welcome .logo {
-    flex: 1;
+    background-image: url(./assets/POSCON-01.png);
+    width: 250px;
+    height: 250px;
     z-index: 2;
 }
 
@@ -201,7 +203,7 @@ polygon.arrow-top {
 }
 
 .section {
-    padding: 2rem 10%;
+    padding: 0 10% 2rem 10%;
 }
 
 .section-title {
@@ -230,16 +232,13 @@ polygon.arrow-top {
 }
 
 .section.video {
+    padding-block-end: 10rem;
     max-width: 80%;
 }
 
 .section.video video {
     width: 100%;
     border-radius: 1rem;
-}
-
-.section.membership p {
-    padding: 1rem 3rem;
 }
 
 .timeline {
@@ -263,13 +262,21 @@ polygon.arrow-top {
     text-align: end;
 }
 
+.timeline .checkpoint:nth-child(odd) > .img {
+    align-items: flex-end;
+}
+
+.timeline .checkpoint:nth-child(even) > .img {
+    align-items: flex-start;
+}
+
 .timeline .checkpoint {
-    gap: 2rem;
+    gap: 6rem;
 }
 
 .timeline .checkpoint > .col {
     flex: 1;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .timeline .checkpoint .img {
@@ -314,46 +321,47 @@ form.contact {
     gap: 1rem;
 }
 
-.npo {
-    margin-block-start: 2rem;
-    text-align: start;
-}
-
-.npo > div {
-    border-start-start-radius: 1rem;
-    padding: 0.5rem 2rem;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        var(--poscon-tertiary) 0%,
-        transparent 75%
-    );
-}
-
-.llc {
-    z-index: 3;
-    margin-block-end: 2rem;
-    text-align: end;
-}
-
-.llc > div {
-    border-end-end-radius: 1rem;
-    padding: 0.5rem 2rem;
-    background: linear-gradient(
-        90deg,
-        transparent 25%,
-        var(--poscon-tertiary) 100%,
-        transparent 100%
-    );
-}
-
-.npo,
-.llc {
+.header {
     width: 85%;
-    position: relative;
-    font-size: 4rem;
-    transform: skewX(-15deg);
+    font-size: 3rem;
     font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 5 !important;
+    margin-block-end: 2rem;
+    text-align: center;
+}
+
+.header > div {
+    border-radius: 0 0 1rem 1rem;
+    padding: 0.5rem 2rem;
+    background: var(--poscon-tertiary);
+}
+
+.header > div::after {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    right: -2rem;
+    border-start-start-radius: 1rem;
+    background: transparent;
+    box-shadow: -1rem 0rem 0 0 var(--poscon-tertiary);
+}
+
+.header > div::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    border-start-end-radius: 1rem;
+    background: transparent;
+    box-shadow: 1rem 0rem 0 0 var(--poscon-tertiary);
 }
 
 .splitter {
@@ -369,9 +377,13 @@ form.contact {
 
 .radar-bg {
     position: relative;
-    background-image: url(./assets/radar-client-background.webp);
+    background-image: url(./assets/641187642.jpg);
     background-size: cover;
     background-attachment: fixed;
+}
+
+.radar-bg > .overlay {
+    background-color: #1e1933f0;
 }
 
 .radar-bg :not(.overlay) {
@@ -403,18 +415,29 @@ footer .socials > a {
 }
 
 @media screen and (max-width: 1200px) {
+
+    .section-title {
+        font-size: 1rem;
+    }
+
     .first-section {
         flex-direction: column;
     }
 
+    .header {
+        font-size: 1.5rem;
+    }
+
     .timeline {
         background: none;
+        gap: 1rem;
     }
 
     .timeline .checkpoint {
         align-items: center;
         justify-content: center;
         text-align: center;
+        gap: 1rem;
     }
 
     .timeline .checkpoint:nth-child(odd) {
@@ -427,6 +450,10 @@ footer .socials > a {
         display: flex;
         flex-direction: column;
         text-align: center;
+    }
+
+    .timeline .checkpoint > .img {
+        align-items: center !important;
     }
 
     .numbers > .row {
